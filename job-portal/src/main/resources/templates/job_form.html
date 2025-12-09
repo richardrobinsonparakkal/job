@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Post Job</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+  <h1>Post New Job</h1>
+  <form th:action="@{/jobs/save}" th:object="${job}" method="post">
+    <label>Title <input type="text" th:field="*{title}" /></label><br/>
+    <label>Location <input type="text" th:field="*{location}" /></label><br/>
+    <label>Closing Date <input type="date" th:field="*{closingDate}" /></label><br/>
+    <label>Description<br/><textarea th:field="*{description}"></textarea></label><br/>
+    <button type="submit">Save</button>
+  </form>
+  <p><a href="/">Back</a></p>
+</body>
+</html>
